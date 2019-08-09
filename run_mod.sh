@@ -64,7 +64,7 @@ if [ $stage -le 4 ]; then
   # later on we'll change this script so you have the option to
   # download the pre-built LMs from openslr.org instead of building them
   # locally.
-  local/ted_train_lm.sh
+  local/ted_download_lm.sh
 fi
 
 if [ $stage -le 5 ]; then
@@ -191,7 +191,7 @@ fi
 if [ $stage -le 17 ]; then
   # This will only work if you have GPUs on your system (and note that it requires
   # you to have the queue set up the right way... see kaldi-asr.org/doc/queue.html)
-  local/chain/run_tdnn.sh
+  local/chain/run_tdnn.sh 
 fi
 
 # The nnet3 TDNN recipe:
